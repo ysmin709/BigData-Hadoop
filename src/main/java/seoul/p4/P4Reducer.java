@@ -36,7 +36,7 @@ public class P4Reducer extends Reducer<Text, Text, Text, Text> {
         Double avg8 = sum8 / cnt8;
         Double avg9 = sum9 / cnt9;
 
-        String result = "  SO2: " + avg1.toString() + "  NO2: " + avg3 + "  CO: " + avg5 +
+        String result = "  SO2: " + avg1 + "  NO2: " + avg3 + "  CO: " + avg5 +
                 "  O3: " + avg6 + "  PM10: " + avg8 + "  PM2.5: " + avg9;
 
         ov.set(result);

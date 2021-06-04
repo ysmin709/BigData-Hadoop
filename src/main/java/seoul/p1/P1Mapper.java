@@ -18,11 +18,11 @@ public class P1Mapper extends Mapper<Object, Text, Text, DoubleWritable> {
         StringTokenizer st = new StringTokenizer(value.toString(), ",");
         st.nextToken();
         String station_code = st.nextToken();
-        String item_code = st.nextToken();
+        Integer item_code = Integer.parseInt(st.nextToken());
         double item_value = Double.parseDouble(st.nextToken());
         Integer check = Integer.parseInt(st.nextToken());
 
-        if (check == 0) {
+        if (check == 0 && item_code == 8) {
             ok.set(station_code + "\t" + item_code);
             ov.set(item_value);
             context.write(ok, ov);

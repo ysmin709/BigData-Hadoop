@@ -13,7 +13,7 @@ public class P1Reducer extends Reducer<Text, DoubleWritable, Text, Text> {
     protected void reduce(Text key, Iterable<DoubleWritable> values,
                           Reducer<Text, DoubleWritable, Text, Text>.Context context)
             throws IOException, InterruptedException {
-        //values가 여러 줄 들어옴
+
         double min = Double.POSITIVE_INFINITY;
         double max = Double.NEGATIVE_INFINITY;
         double sum = 0;
@@ -32,6 +32,5 @@ public class P1Reducer extends Reducer<Text, DoubleWritable, Text, Text> {
 
         ov.set(avg + "\t" + max + "\t" + min);
         context.write(key, ov);
-//        System.out.println(key);
     }
 }
